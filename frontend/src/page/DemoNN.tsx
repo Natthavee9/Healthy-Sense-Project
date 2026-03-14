@@ -1,4 +1,10 @@
+
 import React, { useState } from 'react';
+import axios from 'axios';
+import cancerImage from '../assets/cancer.jpg';
+import cancer2Image from '../assets/cancer2.jpg';
+import nvNormalImage from '../assets/nvNormal.jpg';
+
 
 type SkinCancerResponse = {
     prediction: number;
@@ -35,20 +41,10 @@ export default function DemoML() {
         formData.append('file', file);
 
         try {
-            const response = await fetch('http://localhost:8000/predict/skin-cancer', {
-                method: 'POST',
-                body: formData,
-            });
-
-            if (!response.ok) {
-                const errData = await response.json();
-                throw new Error(errData.detail || 'Failed to get prediction');
-            }
-
-            const data: SkinCancerResponse = await response.json();
-            setResult(data);
+            const response = await axios.post<SkinCancerResponse>('http://localhost:8000/predict/skin-cancer', formData);
+            setResult(response.data);
         } catch (err: any) {
-            setError(err.message || 'An error occurred during prediction');
+            setError(err.response?.data?.detail || err.message || 'An error occurred during prediction');
         } finally {
             setLoading(false);
         }
@@ -62,7 +58,7 @@ export default function DemoML() {
                 </h1>
                 <p className="text-gray-600">Upload an image of a skin lesion for an AI prediction.</p>
             </div>
-
+           
             <div className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg border border-green-100">
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="flex flex-col items-center justify-center w-full">
@@ -102,6 +98,45 @@ export default function DemoML() {
                                 onChange={handleFileChange}
                             />
                         </label>
+                    </div>
+                    
+                    {/* sample image */}
+                    <div className="w-full mt-6">
+                        <p className="text-sm font-semibold text-gray-600 mb-3 text-center">Or use these sample images:</p>
+                        <div className="flex justify-center gap-4 flex-wrap">
+                            {[
+                                { src: cancerImage, name: 'cancer.jpg' },
+                                { src: cancer2Image, name: 'cancer2.jpg' },
+                                { src: nvNormalImage, name: 'nvNormal.jpg' }
+                            ].map((sample) => (
+                                <button
+                                    key={sample.name}
+                                    type="button"
+                                    onClick={async () => {
+                                        try {
+                                            setLoading(true);
+                                            const response = await axios.get(sample.src, { responseType: 'blob' });
+                                            const blob = response.data;
+                                            const fileObj = new File([blob], sample.name, { type: blob.type });
+                                            setFile(fileObj);
+                                            setPreview(sample.src);
+                                            setResult(null);
+                                            setError(null);
+                                        } catch (err) {
+                                            setError(`Failed to load ${sample.name}.`);
+                                        } finally {
+                                            setLoading(false);
+                                        }
+                                    }}
+                                    className="relative w-32 h-32 rounded-lg overflow-hidden border-2 border-transparent hover:border-green-500 transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 group shrink-0"
+                                >
+                                    <img src={sample.src} alt={sample.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                                    <div className="absolute bottom-0 w-full bg-black bg-opacity-60 text-white text-xs py-1.5 text-center font-medium">
+                                        {sample.name}
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
                     {error && (

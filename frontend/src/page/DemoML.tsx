@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 type PredictionRequest = {
     age: number;
@@ -52,23 +53,10 @@ export default function DemoML() {
         setResult(null);
 
         try {
-            const response = await fetch('http://localhost:8000/predict', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (!response.ok) {
-                const errData = await response.json();
-                throw new Error(errData.detail || 'Prediction failed');
-            }
-
-            const data: PredictionResponse = await response.json();
-            setResult(data);
+            const response = await axios.post<PredictionResponse>('http://localhost:8000/predict', formData);
+            setResult(response.data);
         } catch (err: any) {
-            setError(err.message || 'An error occurred. Make sure backend is running.');
+            setError(err.response?.data?.detail || err.message || 'An error occurred. Make sure backend is running.');
         } finally {
             setLoading(false);
         }
