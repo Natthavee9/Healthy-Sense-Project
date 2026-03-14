@@ -6,9 +6,6 @@ export default function MachineLearning() {
                 <h1 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-green-600 to-cyan-500 bg-clip-text text-transparent mb-4">
                     Machine Learning Model
                 </h1>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Hypertension Prediction using an Ensemble of 3 Classification Models
-                </p>
             </div>
 
             <div className="max-w-5xl mx-auto space-y-12">
@@ -16,7 +13,7 @@ export default function MachineLearning() {
                 <section className="card bg-white shadow-lg border border-green-100">
                     <div className="card-body">
                         <h2 className="card-title text-2xl text-green-700 flex items-center gap-2">
-                            <span className="text-3xl">🎯</span> Problem Overview
+                            <span className="text-3xl">🎯</span> จุดประสงค์
                         </h2>
                         <p className="text-gray-600 leading-relaxed">
                             Hypertension (high blood pressure) is a major risk factor for cardiovascular disease.

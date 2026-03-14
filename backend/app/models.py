@@ -29,3 +29,9 @@ class PredictionResponse(BaseModel):
     prediction: int = Field(..., description="0 = No Hypertension, 1 = Hypertension")
     label: str = Field(..., description="Human-readable label")
     probability: float = Field(..., description="Prediction confidence (0-1)")
+
+class SkinCancerResponse(BaseModel):
+    prediction: int = Field(..., description="Predicted class index")
+    label: str = Field(..., description="Human-readable label")
+    probability: float = Field(..., description="Prediction confidence (0-1)")
+    all_probabilities: list[float] = Field(None, description="Confidences per class")
