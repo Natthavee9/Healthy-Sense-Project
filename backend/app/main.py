@@ -128,22 +128,21 @@ async def predict_skin_cancer(file: UploadFile = File(...)):
     try:
         content = await file.read()
         img = Image.open(BytesIO(content)).convert("RGB")
-        # Try a common input shape first, like 224x224.
-        # If the model fails due to a shape mismatch, this will surface the expected shape.
-        img = img.resize((224, 224))
         
-        # Preprocessing: Convert to array and scale to [0,1] or [-1,1] commonly
+        # 🛠️ 1. แก้ไขขนาดภาพให้ตรงกับที่โมเดลเรารู้จัก (128x128)
+        img = img.resize((128, 128))
+        
         img_array = img_to_array(img) / 255.0
         img_array = np.expand_dims(img_array, axis=0) # add batch dimension
 
         preds = skin_cancer_model.predict(img_array)
         
-        # Assuming classification with softmax output
         prediction_idx = int(np.argmax(preds[0]))
         probability = float(preds[0][prediction_idx])
         
-        # We don't have the exact labels right now, so we return the raw index string
-        label = f"Class {prediction_idx}"
+        # 🛠️ 2. ใส่ชื่อโรคทั้ง 7 ชนิดตามชุดข้อมูล HAM10000
+        CLASS_NAMES = ['akiec (มะเร็งระยะเริ่มต้น)', 'bcc (มะเร็งเซลล์ฐาน)', 'bkl (เนื้องอกหูด)', 'df (เนื้องอกเส้นใย)', 'mel (มะเร็งเมลาโนมา)', 'nv (ไฝปกติ)', 'vasc (เนื้องอกหลอดเลือด)']
+        label = CLASS_NAMES[prediction_idx]
         
         return SkinCancerResponse(
             prediction=prediction_idx,
