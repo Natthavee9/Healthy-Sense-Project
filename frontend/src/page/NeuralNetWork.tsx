@@ -17,9 +17,7 @@ export default function NeuralNetwork() {
                             <span className="text-3xl">🎯</span> Problem Overview
                         </h2>
                         <p className="text-gray-600 leading-relaxed">
-                            Hypertension (high blood pressure) is a major risk factor for cardiovascular disease.
-                            Our goal is to predict whether a patient has hypertension based on their health indicators
-                            and lifestyle factors, enabling early detection and preventive care.
+                            
                         </p>
                     </div>
                 </section>
