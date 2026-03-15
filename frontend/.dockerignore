@@ -5,5 +5,4 @@ dist
 *.md
 .vscode
 .idea
-.env
-.env.*
+

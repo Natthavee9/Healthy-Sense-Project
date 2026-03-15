@@ -41,10 +41,10 @@ app = FastAPI(
     description="Hypertension prediction using an ensemble ML model",
     version="1.0.0",
 )
-
+FRONTEND_URL = os.getenv("FRONTEND_URL", "*")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[FRONTEND_URL],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -129,7 +129,7 @@ async def predict_skin_cancer(file: UploadFile = File(...)):
         content = await file.read()
         img = Image.open(BytesIO(content)).convert("RGB")
         
-        # 🛠️ 1. แก้ไขขนาดภาพให้ตรงกับที่โมเดลเรารู้จัก (128x128)
+        
         img = img.resize((128, 128))
         
         img_array = img_to_array(img) / 255.0
@@ -140,7 +140,7 @@ async def predict_skin_cancer(file: UploadFile = File(...)):
         prediction_idx = int(np.argmax(preds[0]))
         probability = float(preds[0][prediction_idx])
         
-        # 🛠️ 2. ใส่ชื่อโรคทั้ง 7 ชนิดตามชุดข้อมูล HAM10000
+       #โรคทั้ง 7 ชนิดตามชุดข้อมูล HAM10000
         CLASS_NAMES = ['akiec (มะเร็งระยะเริ่มต้น)', 'bcc (มะเร็งเซลล์ฐาน)', 'bkl (เนื้องอกหูด)', 'df (เนื้องอกเส้นใย)', 'mel (มะเร็งเมลาโนมา)', 'nv (ไฝปกติ)', 'vasc (เนื้องอกหลอดเลือด)']
         label = CLASS_NAMES[prediction_idx]
         

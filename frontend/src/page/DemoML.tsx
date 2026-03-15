@@ -53,7 +53,7 @@ export default function DemoML() {
         setResult(null);
 
         try {
-            const response = await axios.post<PredictionResponse>('http://localhost:8000/predict', formData);
+            const response = await axios.post<PredictionResponse>(`${import.meta.env.VITE_API_URL}/predict`, formData);
             setResult(response.data);
         } catch (err: any) {
             setError(err.response?.data?.detail || err.message || 'An error occurred. Make sure backend is running.');

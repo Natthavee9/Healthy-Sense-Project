@@ -1,7 +1,7 @@
 export default function MachineLearning() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-cyan-50 py-12 px-4 sm:px-6 lg:px-8">
-            {/* Hero Section */}
+            
             <div className="max-w-5xl mx-auto text-center mb-16">
                 <h1 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-green-600 to-cyan-500 bg-clip-text text-transparent mb-4">
                     Machine Learning Model
@@ -9,17 +9,26 @@ export default function MachineLearning() {
             </div>
 
             <div className="max-w-5xl mx-auto space-y-12">
-                {/* Problem Overview */}
+                
                 <section className="card bg-white shadow-lg border border-green-100">
                     <div className="card-body">
                         <h2 className="card-title text-2xl text-green-700 flex items-center gap-2">
-                            <span className="text-3xl">🎯</span> จุดประสงค์
+                            <span className="text-3xl">🎯</span> Dataset
                         </h2>
-                        <p className="text-gray-600 leading-relaxed">
-                            Hypertension (high blood pressure) is a major risk factor for cardiovascular disease.
-                            Our goal is to predict whether a patient has hypertension based on their health indicators
-                            and lifestyle factors, enabling early detection and preventive care.
-                        </p>
+                        <span className='indent-3 text-left text-l'>
+                            นำมาจาก{" "}
+                            <a
+                                href="https://www.kaggle.com/code/aryanshah26/hypertension#Model-Dump"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-600 hover:text-blue-800 hover:underline font-semibold"
+                            >
+                                Hypertension
+                            </a>{" "}
+                            เป็นชุดข้อมูลผู้ป่วยเกี่ยวกับโรคความดัน ในรูปแบบไฟล์ .csv ประกอบด้วยข้อมูลผู้ป่วยที่สำคัญ เช่น: Age,
+                            {" "}Salt_Intake{" "},{" "}Stress_Score{" "},{" "}BMI{" "}เป้าหมายต้องการให้โมเดลทำนาย ว่าบุคคลนั้นมีภาวะความดันโลหิตสูงหรือไม่ 
+                        </span>
+                       
                     </div>
                 </section>
 
@@ -29,7 +38,7 @@ export default function MachineLearning() {
                 <section className="card bg-white shadow-lg border border-green-100">
                     <div className="card-body">
                         <h2 className="card-title text-2xl text-green-700 flex items-center gap-2">
-                            <span className="text-3xl">⚙️</span> Data Preprocessing
+                            <span className="text-3xl">⚙️</span> Data Cleaning
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
                             {[
@@ -118,42 +127,6 @@ export default function MachineLearning() {
                     </div>
                 </section>
 
-
-
-                {/* Workflow Diagram */}
-                <section className="card bg-white shadow-lg border border-green-100">
-                    <div className="card-body">
-                        <h2 className="card-title text-2xl text-green-700 flex items-center gap-2">
-                            <span className="text-3xl">🔄</span> Prediction Workflow
-                        </h2>
-                        <div className="flex flex-col items-center mt-4 space-y-3">
-                            {[
-                                { label: "Patient Data Input", color: "bg-blue-100 text-blue-800 border-blue-300" },
-                                { label: "↓", color: "" },
-                                { label: "Data Preprocessing (Encoding + Scaling)", color: "bg-purple-100 text-purple-800 border-purple-300" },
-                                { label: "↓", color: "" },
-                                { label: "Logistic Regression  ·  KNN  ·  Decision Tree", color: "bg-amber-100 text-amber-800 border-amber-300" },
-                                { label: "↓", color: "" },
-                                { label: "Soft Voting (Average Probabilities)", color: "bg-green-100 text-green-800 border-green-300" },
-                                { label: "↓", color: "" },
-                                { label: "Prediction: Hypertension / No Hypertension", color: "bg-gradient-to-r from-green-200 to-cyan-200 text-green-900 border-green-400 font-bold" },
-                            ].map((step, i) =>
-                                step.color ? (
-                                    <div
-                                        key={i}
-                                        className={`px-6 py-3 rounded-xl border text-center text-sm sm:text-base w-full max-w-md ${step.color}`}
-                                    >
-                                        {step.label}
-                                    </div>
-                                ) : (
-                                    <span key={i} className="text-2xl text-gray-400">
-                                        {step.label}
-                                    </span>
-                                )
-                            )}
-                        </div>
-                    </div>
-                </section>
             </div>
         </div>
     );

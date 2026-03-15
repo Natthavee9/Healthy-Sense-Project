@@ -41,7 +41,7 @@ export default function DemoML() {
         formData.append('file', file);
 
         try {
-            const response = await axios.post<SkinCancerResponse>('http://localhost:8000/predict/skin-cancer', formData);
+            const response = await axios.post<SkinCancerResponse>(`${import.meta.env.VITE_API_URL}/predict/skin-cancer`, formData);
             setResult(response.data);
         } catch (err: any) {
             setError(err.response?.data?.detail || err.message || 'An error occurred during prediction');
