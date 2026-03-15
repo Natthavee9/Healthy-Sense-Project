@@ -17,11 +17,10 @@ export default function NeuralNetwork() {
                             <span className="text-3xl">🎯</span> Problem Overview
                         </h2>
                         <p className="text-gray-600 leading-relaxed">
-                            
+                            ######
                         </p>
                     </div>
                 </section>
-
 
 
                 {/* Preprocessing */}
@@ -34,22 +33,22 @@ export default function NeuralNetwork() {
                             {[
                                 {
                                     title: "Label Encoding",
-                                    desc: "Family_History & Smoking_Status → 0/1, Exercise_Level → 0/1/2, BP_History → 0/1/2",
+                                    desc: "######",
                                     icon: "🏷️",
                                 },
                                 {
                                     title: "One-Hot Encoding",
-                                    desc: "Medication column expanded with drop_first (drops ACE Inhibitor as baseline)",
+                                    desc: "######",
                                     icon: "🔢",
                                 },
                                 {
                                     title: "Feature Scaling",
-                                    desc: "StandardScaler applied to normalize all features to zero mean and unit variance",
+                                    desc: "######",
                                     icon: "📐",
                                 },
                                 {
                                     title: "Train-Test Split",
-                                    desc: "80% training / 20% testing with random_state=42 for reproducibility",
+                                    desc: "######",
                                     icon: "✂️",
                                 },
                             ].map((step, i) => (
@@ -81,8 +80,7 @@ export default function NeuralNetwork() {
                                     <div className="text-5xl mb-2">📈</div>
                                     <h3 className="card-title text-blue-700">Logistic Regression</h3>
                                     <p className="text-sm text-gray-600">
-                                        A linear model that estimates the probability of hypertension using the sigmoid function.
-                                        Simple, interpretable, and efficient for binary classification.
+                                        ######
                                     </p>
                                     <div className="badge badge-outline badge-primary mt-2">Linear Classifier</div>
                                 </div>
@@ -94,8 +92,7 @@ export default function NeuralNetwork() {
                                     <div className="text-5xl mb-2">📍</div>
                                     <h3 className="card-title text-purple-700">K-Nearest Neighbors</h3>
                                     <p className="text-sm text-gray-600">
-                                        Classifies a patient based on the k=5 most similar patients in the training set.
-                                        Uses distance metrics to find neighbors.
+                                        ######
                                     </p>
                                     <div className="badge badge-outline badge-secondary mt-2">k = 5</div>
                                 </div>
@@ -107,8 +104,7 @@ export default function NeuralNetwork() {
                                     <div className="text-5xl mb-2">🌳</div>
                                     <h3 className="card-title text-amber-700">Decision Tree</h3>
                                     <p className="text-sm text-gray-600">
-                                        Builds a tree of if-else rules from the data features.
-                                        Capped at max_depth=5 for generalization and to avoid overfitting.
+                                        ######
                                     </p>
                                     <div className="badge badge-outline badge-warning mt-2">max_depth = 5</div>
                                 </div>
@@ -127,15 +123,15 @@ export default function NeuralNetwork() {
                         </h2>
                         <div className="flex flex-col items-center mt-4 space-y-3">
                             {[
-                                { label: "Patient Data Input", color: "bg-blue-100 text-blue-800 border-blue-300" },
+                                { label: "######", color: "bg-blue-100 text-blue-800 border-blue-300" },
                                 { label: "↓", color: "" },
-                                { label: "Data Preprocessing (Encoding + Scaling)", color: "bg-purple-100 text-purple-800 border-purple-300" },
+                                { label: "######", color: "bg-purple-100 text-purple-800 border-purple-300" },
                                 { label: "↓", color: "" },
-                                { label: "Logistic Regression  ·  KNN  ·  Decision Tree", color: "bg-amber-100 text-amber-800 border-amber-300" },
+                                { label: "######", color: "bg-amber-100 text-amber-800 border-amber-300" },
                                 { label: "↓", color: "" },
-                                { label: "Soft Voting (Average Probabilities)", color: "bg-green-100 text-green-800 border-green-300" },
+                                { label: "######", color: "bg-green-100 text-green-800 border-green-300" },
                                 { label: "↓", color: "" },
-                                { label: "Prediction: Hypertension / No Hypertension", color: "bg-gradient-to-r from-green-200 to-cyan-200 text-green-900 border-green-400 font-bold" },
+                                { label: "######", color: "bg-gradient-to-r from-green-200 to-cyan-200 text-green-900 border-green-400 font-bold" },
                             ].map((step, i) =>
                                 step.color ? (
                                     <div
