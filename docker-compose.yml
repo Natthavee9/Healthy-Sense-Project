@@ -3,7 +3,7 @@ services:
     build: ./backend
     container_name: healthy-sense-backend
     ports:
-      - "8000:8000"
+      - "7860:7860"
     env_file:
     - ./backend/.env
     restart: unless-stopped
