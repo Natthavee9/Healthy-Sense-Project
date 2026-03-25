@@ -170,6 +170,12 @@ export default function DemoML() {
                                 {(result.probability * 100).toFixed(2)}%
                             </span>
                         </p>
+                        <div className="mt-6 p-4 bg-yellow-50 border border-yellow-300 rounded-xl flex items-start gap-3">
+                            <span className="text-yellow-500 text-xl mt-0.5">⚠️</span>
+                            <p className="text-sm text-yellow-800">
+                                <span className="font-semibold">คำเตือน:</span> ผลลัพธ์นี้เป็นเพียงการทำนายของ AI เท่านั้น ไม่สามารถใช้แทนการวินิจฉัยทางการแพทย์ได้ กรุณาปรึกษาแพทย์ผู้เชี่ยวชาญเพื่อการวินิจฉัยและการรักษาที่ถูกต้อง
+                            </p>
+                        </div>
                     </div>
                 )}
             </div>
