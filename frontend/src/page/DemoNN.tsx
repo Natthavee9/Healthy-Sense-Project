@@ -4,6 +4,7 @@ import axios from 'axios';
 import cancerImage from '../assets/cancer.jpg';
 import cancer2Image from '../assets/cancer2.jpg';
 import nvNormalImage from '../assets/nvNormal.jpg';
+import { TriangleAlert } from 'lucide-react';
 
 
 type SkinCancerResponse = {
@@ -171,7 +172,7 @@ export default function DemoML() {
                             </span>
                         </p>
                         <div className="mt-6 p-4 bg-yellow-50 border border-yellow-300 rounded-xl flex items-start gap-3">
-                            <span className="text-yellow-500 text-xl mt-0.5">⚠️</span>
+                            <span className="text-yellow-500 text-xl mt-0.5"><TriangleAlert /></span>
                             <p className="text-sm text-yellow-800">
                                 <span className="font-semibold">คำเตือน:</span> ผลลัพธ์นี้เป็นเพียงการทำนายของ AI เท่านั้น ไม่สามารถใช้แทนการวินิจฉัยทางการแพทย์ได้ กรุณาปรึกษาแพทย์ผู้เชี่ยวชาญเพื่อการวินิจฉัยและการรักษาที่ถูกต้อง
                             </p>

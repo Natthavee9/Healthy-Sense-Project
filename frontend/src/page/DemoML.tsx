@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SquareActivity ,TriangleAlert } from 'lucide-react';
 import axios from 'axios';
 
 type PredictionRequest = {
@@ -179,7 +180,7 @@ export default function DemoML() {
                                 <span className="font-bold text-gray-800">{(result.probability * 100).toFixed(1)}%</span>
                             </div>
                             <div className="mt-6 p-4 bg-yellow-50 border border-yellow-300 rounded-xl flex items-start gap-3">
-                                <span className="text-yellow-500 text-xl mt-0.5">⚠️</span>
+                                <span className="text-yellow-500 text-xl mt-0.5"><TriangleAlert /></span>
                                 <p className="text-sm text-yellow-800">
                                     <span className="font-semibold">คำเตือน:</span> ผลลัพธ์นี้เป็นเพียงการทำนายของ AI เท่านั้น ไม่สามารถใช้แทนการวินิจฉัยทางการแพทย์ได้ กรุณาปรึกษาแพทย์ผู้เชี่ยวชาญเพื่อการวินิจฉัยและการรักษาที่ถูกต้อง
                                 </p>
@@ -187,7 +188,7 @@ export default function DemoML() {
                         </div>
                     ) : (
                         <div className="p-8 rounded-2xl border-2 border-dashed border-gray-300 text-center text-gray-400 bg-gray-50 h-full flex flex-col items-center justify-center">
-                            <span className="text-6xl mb-4">📊</span>
+                            <span className="text-6xl mb-4"><SquareActivity size={"70px"}/></span>
                             <p className="text-xl font-medium">Results will appear here</p>
                             <p className="text-sm">Fill out the form and submit to see risk predictions.</p>
                         </div>
