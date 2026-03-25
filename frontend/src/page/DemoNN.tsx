@@ -106,9 +106,9 @@ export default function DemoML() {
                         <p className="text-sm font-semibold text-gray-600 mb-3 text-center">Or use these sample images:</p>
                         <div className="flex justify-center gap-4 flex-wrap">
                             {[
-                                { src: cancerImage, name: 'cancer.jpg' },
-                                { src: cancer2Image, name: 'cancer2.jpg' },
-                                { src: nvNormalImage, name: 'nvNormal.jpg' }
+                                { src: cancerImage, name: 'cancer' },
+                                { src: cancer2Image, name: '2' },
+                                { src: nvNormalImage, name: '3' }
                             ].map((sample) => (
                                 <button
                                     key={sample.name}
