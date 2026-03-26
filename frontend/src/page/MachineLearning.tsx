@@ -124,7 +124,7 @@ export default function MachineLearning() {
                                     <h3 className="card-title text-blue-700">Logistic Regression</h3>
                                     <p className="text-md text-gray-600">
                                         Logistic Regression มีจุดประสงค์เพื่อใช้เป็นโมเดลพื้นฐาน ในการจำแนกประเภทข้อมูลแบบสองคลาส
-                                        เรียกใช้ฟังก์ชัน LogisticRegressionโมเดลนี้จะทำงานโดยอาศัยสมการเชิงเส้นและฟังก์ชัน Sigmoid 
+                                        เรียกใช้ฟังก์ชัน LogisticRegression โมเดลนี้จะทำงานโดยอาศัยสมการเชิงเส้นและฟังก์ชัน Sigmoid 
                                         เพื่อคำนวณหาค่าความน่าจะเป็นที่ผู้ป่วยที่จะมีภาวะความดันโลหิตสูง
                                     </p>
                                     <div className="badge badge-outline badge-primary mt-2">Linear Classifier</div>
@@ -137,8 +137,8 @@ export default function MachineLearning() {
                                     <div className="text-5xl mb-2"><ChartScatter size={"50px"} /></div>
                                     <h3 className="card-title text-purple-700">K-Nearest Neighbors</h3>
                                     <p className="text-md text-gray-600">
-                                        จำแนกคลาสของข้อมูลโดยอาศัยการเปรียบเทียบความคล้ายคลึงของฟีเจอร์ต่างๆ ในการตั้งค่าโมเดล 
-                                        ได้กำหนดค่าพารามิเตอร์ n_neighbors=5 เมื่อมีข้อมูลผู้ป่วยรายเข้ามา ระบบจะทำการวัดระยะห่าง  
+                                        แยกคลาสของข้อมูลโดยอาศัยการเปรียบเทียบความคล้ายคลึงของฟีเจอร์ต่างๆ ในการตั้งค่าโมเดล 
+                                        ได้กำหนดค่าพารามิเตอร์ n_neighbors=5 เมื่อมีข้อมูลผู้ป่วยเข้ามา ระบบจะทำการวัดระยะห่าง  
                                         เพื่อค้นหาข้อมูลผู้ป่วยในชุดข้อมูล Training Set ที่มีลักษณะสุขภาพใกล้เคียงที่สุดจำนวน 5 ลำดับแรก 
                                         จากนั้นจะทำการโหวตเลือกคลาสจากเพื่อนบ้านทั้ง 5 จุด เพื่อตัดสินใจว่าผู้ป่วยมีความเสี่ยงหรือไม่
                                     </p>
@@ -152,7 +152,7 @@ export default function MachineLearning() {
                                     <div className="text-5xl mb-2"><Trees size={"35px"} /></div>
                                     <h3 className="card-title text-amber-700">Decision Tree</h3>
                                     <p className="text-md text-gray-600">
-                                        ทำงานโดยการสร้างกฎเงื่อนไขการตัดสินใจ If-Else  โดยแตกกิ่งก้านตามความสำคัญของตัวแปร
+                                        ทำงานโดยการสร้างเงื่อนไขการตัดสินใจ If-Else  โดยแตกกิ่งก้านตามความสำคัญของตัวแปร
                                         โดยจำกัดความลึกสูงสุดของต้นไม้ตัดสินใจไม่ให้เกิน 5 ระดับ เพื่อป้องกันปัญหา Overfitting
 
                                     </p>
@@ -225,7 +225,7 @@ export default function MachineLearning() {
                                             บันทึกโมเดลที่ผ่านการเทรนแล้วออกเป็นไฟล์ .pkl รวมถึงไฟล์ปรับสเกลข้อมูลควบคู่ไปด้วยเพราะ
                                             ตัว Scaler จะทำหน้าที่เป็นตัวแปลงข้อมูลดิบ เช่น อายุหรือค่า BMI ให้อยู่ในสัดส่วนมาตรฐานเดียวกับตอนที่โมเดลเรียนรู้
                                             เนื่องจาก ไฟล์ Modelผ่านการแปลงสเกลจากตัว Scaler เรียบร้อยแล้ว โมเดลก็จะสามารถทำความเข้าใจ 
-                                            นำไปเข้าสมการคณิตศาสตร์ และทำนายผลลัพธ์สูงออกมา
+                                            และทำนายผลลัพธ์สูงออกมา
                                         </p>
                                     ), 
                                     color: "bg-gradient-to-r from-green-200 to-cyan-200 text-green-900 border-green-400 font-bold" },
