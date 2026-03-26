@@ -165,7 +165,7 @@ export default function MachineLearning() {
                     {/* Enemble */}
                     <p className="text-md text-black  text-left indent-6">
                         Ensemble Learning ผ่านคลาส VotingClassifier โดยนำโมเดลทั้ง 3 รูปแบบ Logistic Regression, KNN, Decision Tree มาทำงานร่วมกัน
-                        จะไม่ได้ตัดสินใจจากการนับเสียงข้างมากของโมเดล แต่จะดึงค่าความน่าจะเป็น  ที่ทำนายได้จากทั้ง 3 โมเดลมาหาค่าเฉลี่ยทางคณิตศาสตร์
+                        จะโดยตัดสินใจผลลัพธ์ด้วยหลักการ Soft Voting เป็นการนำค่าความน่าจะเป็นจากทุกโมเดลมาหาค่าเฉลี่ย แทนการโหวตด้วยเสียงข้างมาก
                     </p>
                 </section>
 
