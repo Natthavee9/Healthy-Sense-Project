@@ -32,8 +32,8 @@ export default function NeuralNetwork() {
                             >
                                 skin-cancer-mnist-ham10000
                             </a>{" "}
-                            ชุดข้อมูลประกอบด้วยไฟล์รูปภาพรอยโรคผิวหนังจำนวน 20,030 รูป และไฟล์ตารางรายละเอียดข้อมูลผู้ป่วยจำนวน 10,015 เคส
-                            ข้อมูลถูกจัดกลุ่มออกเป็นโรคผิวหนังและมะเร็งผิวหนัง 7 ประเภทหลัก ได้แก่ nv, mel, bkl, bcc, akiec, vasc และ df
+                            ชุดข้อมูลไฟล์รูปภาพรอยโรคผิวหนังจำนวน 20,030 รูป และตารางรายละเอียดข้อมูลผู้ป่วยจำนวน 10,015 เคส
+                            ข้อมูลถูกจัดกลุ่มออกเป็นโรคผิวหนังและมะเร็งผิวหนัง 7 ประเภท ได้แก่ nv, mel, bkl, bcc, akiec, vasc และ df
                         </span>
                     </div>
                 </section>
@@ -51,7 +51,7 @@ export default function NeuralNetwork() {
                                     title: "Conv2D",
                                     desc: (
                                         <>
-                                            เลเยอร์คอนโวลูชัน ทำหน้าที่ใช้ฟิลเตอร์สแกนรูปภาพเพื่อดึงคุณลักษณะเด่น
+                                            เลเยอร์คอนโวลูชัน ทำหน้าที่ใช้ฟิลเตอร์สแกนรูปภาพเพื่อดึงลักษณะเด่น
                                             เช่น เส้นขอบ พื้นผิว หรือสีของรอยโรค
                                         </>
                                     ),
@@ -72,7 +72,7 @@ export default function NeuralNetwork() {
                                     title: "MaxPooling2D",
                                     desc: (
                                         <>
-                                            เลเยอร์ลดขนาดมิติลดทอนขนาดของรูปภาพโดยคงไว้เฉพาะข้อมูลที่มีน้ำหนักความสำคัญสูงสุด 
+                                            เลเยอร์ลดขนาดมิติลดขนาดของรูปภาพโดยคงไว้เฉพาะข้อมูลที่มีน้ำหนักความสำคัญ
                                             เพื่อลดปริมาณข้อมูล
                                         </>
                                     ),
@@ -82,7 +82,7 @@ export default function NeuralNetwork() {
                                     title: "Dropout",
                                     desc: (
                                         <>
-                                            เลเยอร์ป้องกันการจำ ทำการสุ่มตัดการเชื่อมต่อของโหนดในโครงข่ายออกบางส่วนระหว่างการ train
+                                            เลเยอร์ป้องกันการจำ ทำการสุ่มตัดการเชื่อมต่อของโหนดออกบางส่วนระหว่างการ train
                                             เพื่อลดปัญหา{" "}Overfitting
                                         </>
                                     ),
@@ -92,7 +92,7 @@ export default function NeuralNetwork() {
                                     title: "Flatten",
                                     desc: (
                                         <>
-                                            เลเยอร์ตัดสินใจะคลี่ข้อมูลภาพที่ผ่านการสกัดคุณลักษณะแล้วให้กลายเป็นเวกเตอร์ 1 มิติ และส่งต่อไปยังชั้น Dense
+                                            เลเยอร์ตัดสินใจจะคลี่ข้อมูลภาพที่ผ่านการกรองลักษณะแล้วให้กลายเป็นเวกเตอร์ 1 มิติ และส่งต่อไปยังชั้น Dense
                                             เพื่อทำการคำนวณความน่าจะเป็นและจำแนกประเภทของโรคผิวหนังออกมา
                                         </>
                                     ),
@@ -125,7 +125,7 @@ export default function NeuralNetwork() {
                 <section className="card bg-white shadow-lg border border-green-100">
                     <div className="card-body">
                         <h2 className="card-title text-2xl text-green-700 flex items-center gap-2">
-                            <span className="text-3xl"><Workflow size={"35px"} /></span> Prediction Workflow
+                            <span className="text-3xl"><Workflow size={"35px"} /></span> Workflow
                         </h2>
                         <div className="flex flex-col items-center mt-4 space-y-3">
                             {[
