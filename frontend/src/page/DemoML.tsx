@@ -157,7 +157,8 @@ export default function DemoML() {
                         </button>
                     </form>
                 </div>
-
+                
+                {/* result */}
                 <div className="flex flex-col justify-center">
                     {result ? (
                         <div className={`p-8 rounded-2xl shadow-xl border text-center animate-fade-in-up ${

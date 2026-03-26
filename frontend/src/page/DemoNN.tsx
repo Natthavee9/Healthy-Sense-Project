@@ -158,7 +158,8 @@ export default function DemoML() {
                         {loading ? 'Analyzing...' : 'Predict Skin Cancer'}
                     </button>
                 </form>
-
+                
+                {/* result */}
                 {result && (
                     <div className="mt-8 p-6 bg-gradient-to-br from-green-50 to-cyan-50 rounded-xl border border-green-200 text-center animate-fade-in-up">
                         <h2 className="text-2xl font-extrabold text-gray-800 mb-2">Prediction Result</h2>

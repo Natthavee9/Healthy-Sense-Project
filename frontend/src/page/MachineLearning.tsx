@@ -169,7 +169,7 @@ export default function MachineLearning() {
                     </p>
                 </section>
 
-                {/* Workflow Diagram */}
+                {/* Workflow  */}
                 <section className="card bg-white shadow-lg border border-blue-100">
                     <div className="card-body">
                         <h2 className="card-title text-2xl text-blue-700 flex items-center gap-2">
@@ -225,7 +225,7 @@ export default function MachineLearning() {
                                             บันทึกโมเดลที่ผ่านการเทรนแล้วออกเป็นไฟล์ .pkl รวมถึงไฟล์ปรับสเกลข้อมูลควบคู่ไปด้วยเพราะ
                                             ตัว Scaler จะทำหน้าที่เป็นตัวแปลงข้อมูลดิบ เช่น อายุหรือค่า BMI ให้อยู่ในสัดส่วนมาตรฐานเดียวกับตอนที่โมเดลเรียนรู้
                                             เนื่องจาก ไฟล์ Modelผ่านการแปลงสเกลจากตัว Scaler เรียบร้อยแล้ว โมเดลก็จะสามารถทำความเข้าใจ 
-                                            และทำนายผลลัพธ์สูงออกมา
+                                            และทำนายผลลัพธ์
                                         </p>
                                     ), 
                                     color: "bg-gradient-to-r from-green-200 to-cyan-200 text-green-900 border-green-400 font-bold" },

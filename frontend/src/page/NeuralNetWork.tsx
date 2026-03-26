@@ -121,7 +121,7 @@ export default function NeuralNetwork() {
                 
 
 
-                {/* Workflow Diagram */}
+                {/* Workflow */}
                 <section className="card bg-white shadow-lg border border-green-100">
                     <div className="card-body">
                         <h2 className="card-title text-2xl text-green-700 flex items-center gap-2">
